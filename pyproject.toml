@@ -1,0 +1,12 @@
+[tool.ruff]
+target-version = "py313"
+line-length = 100
+extend-exclude = ["**/migrations/*"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "DJ"]
+# DJ001: el esquema usa NULL en textos opcionales a propósito (p. ej. índice único parcial del teléfono).
+ignore = ["DJ001"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["config", "core", "accounts", "clinics", "patients", "scheduling", "clinical", "attachments", "audit"]

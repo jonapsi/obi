@@ -1,0 +1,20 @@
+# Secretos
+.env
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+.ruff_cache/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Node / frontend
+node_modules/
+frontend/dist/
+
+# Editor y sistema
+.DS_Store
+Thumbs.db
+.idea/
