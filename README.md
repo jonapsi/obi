@@ -14,7 +14,8 @@ Monorepo:
 - Docker Desktop (o Docker Engine con Compose)
 - Python 3.13
 - Node.js 22 LTS o más reciente
-
+- uv (instala Python 3.13): curl -LsSf https://astral.sh/uv/install.sh | sh
+- Windows: desarrolla dentro de WSL2 (Ubuntu 24.04). Con Control inteligente de aplicaciones activado, Windows bloquea librerías compiladas como psycopg.
 ## Instalación
 
 ### 1. Clonar y configurar variables
@@ -46,9 +47,9 @@ El script solo corre con el volumen vacío. Para empezar de cero: `docker compos
 
 ```bash
 cd backend
-python3.13 -m venv .venv
-source .venv/bin/activate   # Windows: .venv\Scripts\activate
-pip install -r requirements-dev.txt
+uv venv --python 3.13 --seed .venv
+source .venv/bin/activate
+python -m pip install -r requirements-dev.txt
 pre-commit install
 python manage.py migrate --database=owner
 python manage.py runserver
